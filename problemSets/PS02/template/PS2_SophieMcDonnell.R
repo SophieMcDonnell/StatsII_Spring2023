@@ -29,6 +29,9 @@ pkgTest <- function(pkg){
 
 lapply(c(),  pkgTest)
 
+library(mgcv)
+library(dplyr)
+
 # set wd for current folder
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
@@ -38,3 +41,47 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # load data
 load(url("https://github.com/ASDS-TCD/StatsII_Spring2023/blob/main/datasets/climateSupport.RData?raw=true"))
+
+# Regularize data
+
+df <- mutate(climateSupport,
+  # choice column
+  choice = case_when(
+   choice == "Supported" ~ 1,
+   TRUE ~ 0 
+  ),
+  
+  # countries column 
+  countries = sub(" .*", "", countries),
+  countries = as.numeric(countries) / 192,
+  
+  #sanctions column 
+  sanctions = sub("None", 0, sanctions),
+  sanctions = sub("%", "", sanctions),
+  sanctions = as.numeric(sanctions) / 100
+)
+
+head(df) 
+
+
+# GLM
+glm_climate <- glm(choice ~ countries + sanctions, 
+                family = binomial(link = 'logit'),
+                data = df
+            )
+summary(glm_climate)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
