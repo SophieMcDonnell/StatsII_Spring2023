@@ -72,17 +72,12 @@
 		\item Please show your work! You may lose points by simply writing in the answer. If the problem requires you to execute commands in \texttt{R}, please include the code you used to get your answers. Please also include the \texttt{.R} file that contains your code. If you are not sure if work needs to be shown for a particular problem, please ask.
 		\item Your homework should be submitted electronically on GitHub in \texttt{.pdf} form.
 		\item This problem set is due before 23:59 on Sunday February 19, 2023. No late assignments will be accepted.
-	%	\item Total available points for this homework is 80.
+
 	\end{itemize}
 
-	
-	%	\vspace{.25cm}
-	
-%\noindent In this problem set, you will run several regressions and create an add variable plot (see the lecture slides) in \texttt{R} using the \texttt{incumbents\_subset.csv} dataset. Include all of your code.
 
 	\vspace{.25cm}
-%\section*{Question 1} %(20 points)}
-%\vspace{.25cm}
+
 \noindent We're interested in what types of international environmental agreements or policies people support (\href{https://www.pnas.org/content/110/34/13763}{Bechtel and Scheve 2013)}. So, we asked 8,500 individuals whether they support a given policy, and for each participant, we vary the (1) number of countries that participate in the international agreement and (2) sanctions for not following the agreement. \\
 
 \noindent Load in the data labeled \texttt{climateSupport.csv} on GitHub, which contains an observational study of 8,500 observations.
@@ -113,8 +108,7 @@
 	Remember, we are interested in predicting the likelihood of an individual supporting a policy based on the number of countries participating and the possible sanctions for non-compliance.
 	\begin{enumerate}
 		\item [] Fit an additive model. Provide the summary output, the global null hypothesis, and $p$-value. Please describe the results and provide a conclusion.
-		%\item
-		%How many iterations did it take to find the maximum likelihood estimates?
+	
 	\end{enumerate}
 	
 	\item
@@ -122,8 +116,7 @@
 	\begin{enumerate}
 		\item
 		For the policy in which nearly all countries participate [160 of 192], how does increasing sanctions from 5\% to 15\% change the odds that an individual will support the policy? (Interpretation of a coefficient)
-%		\item
-%		For the policy in which very few countries participate [20 of 192], how does increasing sanctions from 5\% to 15\% change the odds that an individual will support the policy? (Interpretation of a coefficient)
+
 		\item
 		What is the estimated probability that an individual will support a policy if there are 80 of 192 countries participating with no sanctions? 
 		\item

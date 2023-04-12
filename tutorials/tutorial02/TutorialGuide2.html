@@ -1250,6 +1250,9 @@ predict(mod2, newdat2, type = &quot;response&quot;)</code></pre>
 exp(log_odds)/(1+exp(log_odds))</code></pre>
 <pre><code>##         1 
 ## 0.8661015</code></pre>
+<pre class="r"><code>1/(1+exp(-log_odds))</code></pre>
+<pre><code>##         1 
+## 0.8661015</code></pre>
 <p>As you can see, we get the same prediction. Interpreting coefficients
 and predicted values in logit regression is less straightforward than
 linear regression. We will look into this in greater detail in the weeks
