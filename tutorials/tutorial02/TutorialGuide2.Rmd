@@ -140,6 +140,10 @@ log_odds <- predict(mod2, newdat2)
 exp(log_odds)/(1+exp(log_odds))
 ```
 
+```{r predict by hand 2}
+1/(1+exp(-log_odds))
+```
+
 As you can see, we get the same prediction. Interpreting coefficients and predicted values in logit regression is less straightforward than linear regression. We will look into this in greater detail in the weeks to come, but this [link](https://stats.oarc.ucla.edu/r/dae/logit-regression/) has some helpful examples that explain the difference between log odds, odds, and probability, and how we can calculate each with R.
 
 Before we move on, just to drive home the difference between linear and logistic regression, look at the plot below.
